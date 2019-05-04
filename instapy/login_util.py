@@ -275,7 +275,7 @@ def login_user(browser,
 
     # Check if user is logged-in (If there's two 'nav' elements)
     nav = browser.find_elements_by_xpath('//nav')
-    if len(nav) == 2:
+    if len(nav) > 0:
         # create cookie for username
         pickle.dump(browser.get_cookies(), open(
             '{0}{1}_cookie.pkl'.format(logfolder, username), 'wb'))
